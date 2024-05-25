@@ -8,8 +8,8 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			if(arr.length <= 1 || arr.every(v => v === arr[0])){
+function secondHighest(arr) {
+    if(arr.length <= 1 || arr.every(v => v === arr[0])){
         return "-Infinity"
     }
     else {
@@ -21,16 +21,17 @@
             }
         }
     }
-		}
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
+}
+
+function Main() {
+    var n = Number(prompt("Enter the number of elements"));
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt("Enter element " + (i+1)));
+    }
+    alert(secondHighest(arr));
+}
+Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
