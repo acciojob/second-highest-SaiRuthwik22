@@ -9,6 +9,14 @@
 <body>	
 	<script>
 function secondHighest(arr) {
+if(arr.length==0 || arr.length == 1){
+    return "-Infinity"
+}
+else if(arr.every((v)=>v==arr[0])){
+    return "-Infinity"
+}
+else{
+    	
     let first = -Infinity, second = -Infinity;
     for(let i = 0; i < arr.length; i++) {
         if(arr[i] > first) {
@@ -23,6 +31,7 @@ function secondHighest(arr) {
     } else {
         return second;
     }
+}
 }
 
 function Main() {
