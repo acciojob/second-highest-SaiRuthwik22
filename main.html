@@ -9,17 +9,19 @@
 <body>	
 	<script>
 function secondHighest(arr) {
-    if(arr.length <= 1 || arr.every(v => v === arr[0])){
-        return "-Infinity"
-    }
-    else {
-        arr.sort((a, b) => b - a);
-        let first = arr[0];
-        for (let i = 1; i < arr.length; i++) {
-            if (arr[i] !== first) {
-                return arr[i];
-            }
+    let first = -Infinity, second = -Infinity;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if(arr[i] > second && arr[i] < first) {
+            second = arr[i];
         }
+    }
+    if(second === -Infinity) {
+        return "-Infinity";
+    } else {
+        return second;
     }
 }
 
